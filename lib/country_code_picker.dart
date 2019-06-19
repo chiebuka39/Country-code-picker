@@ -46,14 +46,20 @@ class CountryCodePicker extends StatefulWidget {
   State<StatefulWidget> createState() {
     List<Map> jsonList = codes;
 
-    List<CountryCode> elements = jsonList
-        .map((s) => new CountryCode(
-              name: s['name'],
-              code: s['code'],
-              dialCode: s['dial_code'],
-              flagUri: 'flags/${s['code'].toLowerCase()}.png',
-            ))
-        .toList();
+    List<CountryCode> elements = jsonList.map((s) {
+      var code = s['code'];
+      print('Code = $code');
+      var currency = currencies[code];
+      print('Currency = $currency :: Code = $code');
+      return new CountryCode(
+        name: s['name'],
+        code: code,
+        dialCode: s['dial_code'],
+        flagUri: 'flags/${code.toLowerCase()}.png',
+        currency: currency['currency'],
+        currencySymbol: currency['symbol'],
+      );
+    }).toList();
 
     return new _CountryCodePickerState(elements);
   }
@@ -130,15 +136,14 @@ class _CountryCodePickerState extends State<CountryCodePicker> {
   void _showSelectionDialog() {
     showDialog(
       context: context,
-      builder: (_) =>
-        SelectionDialog(
-          elements,
-          favoriteElements,
-          showCountryOnly: widget.showCountryOnly,
-          emptySearchBuilder: widget.emptySearchBuilder,
-          searchDecoration: widget.searchDecoration,
-          searchStyle: widget.searchStyle,
-        ),
+      builder: (_) => SelectionDialog(
+        elements,
+        favoriteElements,
+        showCountryOnly: widget.showCountryOnly,
+        emptySearchBuilder: widget.emptySearchBuilder,
+        searchDecoration: widget.searchDecoration,
+        searchStyle: widget.searchStyle,
+      ),
     ).then((e) {
       if (e != null) {
         setState(() {

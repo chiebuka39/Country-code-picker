@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 mixin ToAlias {}
 
 @deprecated
@@ -17,10 +19,24 @@ class CountryCode {
   /// the dial code (+39,+93..)
   String dialCode;
 
-  CountryCode({this.name, this.flagUri, this.code, this.dialCode});
+  /// The currency text
+  String currency;
+
+  /// The currency symbol
+  String currencySymbol;
+
+  CountryCode(
+      {@required this.name,
+      @required this.flagUri,
+      @required this.code,
+      @required this.dialCode,
+      @required this.currency,
+      @required this.currencySymbol});
 
   @override
-  String toString() => "$dialCode";
+  String toString() {
+    return 'CountryCode{name: $name, flagUri: $flagUri, code: $code, dialCode: $dialCode, currency: $currency, currencySymbol: $currencySymbol}';
+  }
 
   String toLongString() => "$dialCode $name";
 

@@ -9,6 +9,14 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  var _selectedCountry = CountryCode(
+      name: null,
+      flagUri: null,
+      code: null,
+      dialCode: null,
+      currency: null,
+      currencySymbol: null);
+
   @override
   void initState() {
     super.initState();
