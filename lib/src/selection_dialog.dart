@@ -38,55 +38,50 @@ class _SelectionDialogState extends State<SelectionDialog> {
 
   @override
   Widget build(BuildContext context) => Material(
-    child: Container(
+        color: Colors.white,
+        type: MaterialType.canvas,
+        child: Container(
           child: Column(
             children: <Widget>[
-              TextField(
-                style: widget.searchStyle,
-                decoration: widget.searchDecoration,
-                onChanged: _filterElements,
-              ),
               Expanded(
                   child: SingleChildScrollView(
-                child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height,
-                    child: ListView(
-                        children: [
-                      widget.favoriteElements.isEmpty
-                          ? const DecoratedBox(decoration: BoxDecoration())
-                          : Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[]
-                                ..addAll(widget.favoriteElements
-                                    .map(
-                                      (f) => SimpleDialogOption(
-                                        child: _buildOption(f),
-                                        onPressed: () {
-                                          _selectItem(f);
-                                        },
-                                      ),
-                                    )
-                                    .toList())
-                                ..add(const Divider())),
-                    ]..addAll(filteredElements.isEmpty
-                            ? [_buildEmptySearchWidget(context)]
-                            : filteredElements.map((e) => SimpleDialogOption(
-                                  key: Key(e.toLongString()),
-                                  child: _buildOption(e),
-                                  onPressed: () {
-                                    _selectItem(e);
-                                  },
-                                ))))),
+                child: Column(
+                    children: [
+                  widget.favoriteElements.isEmpty
+                      ? const DecoratedBox(decoration: BoxDecoration())
+                      : Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[]
+                            ..addAll(widget.favoriteElements
+                                .map(
+                                  (f) => FlatButton(
+                                    padding: EdgeInsets.symmetric(vertical: 13, horizontal: 20),
+                                    child: _buildOption(f),
+                                    onPressed: () {
+                                      _selectItem(f);
+                                    },
+                                  ),
+                                )
+                                .toList())
+                            ..add(const Divider())),
+                ]..addAll(filteredElements.isEmpty
+                        ? [_buildEmptySearchWidget(context)]
+                        : filteredElements.map((e) => FlatButton(
+                              padding: EdgeInsets.symmetric(vertical: 13, horizontal: 20),
+                              key: Key(e.toLongString()),
+                              child: _buildOption(e),
+                              onPressed: () {
+                                _selectItem(e);
+                              },
+                            )))),
               ))
             ],
           ),
         ),
-  );
+      );
 
   Widget _buildOption(CountryCode e) {
     return Container(
-      width: 400,
       child: Flex(
         direction: Axis.horizontal,
         children: <Widget>[

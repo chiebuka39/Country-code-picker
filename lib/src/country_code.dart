@@ -1,3 +1,4 @@
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/foundation.dart';
 
 mixin ToAlias {}
@@ -41,4 +42,18 @@ class CountryCode {
   String toLongString() => "$dialCode $name";
 
   String toCountryStringOnly() => '$name';
+}
+
+
+CountryCode getCountryCode(String countryCode) {
+  countryCode = countryCode.toUpperCase();
+  var code = countryCodes.firstWhere((map) => map['code'] == countryCode);
+  var currency = countryCurrencies[countryCode];
+  return CountryCode(
+      name: code['name'],
+      flagUri: 'flags/${code['code'].toLowerCase()}.png',
+      code: code['code'],
+      dialCode: code['dial_code'],
+      currency: currency['currency'],
+      currencySymbol: currency['symbol']);
 }

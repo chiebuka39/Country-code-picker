@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:hello_example/my_country_code_picker_widget.dart';
 
 void main() => runApp(new MyApp());
 
@@ -22,6 +23,7 @@ class _HomeWidgetState extends State<HomeWidget> {
 
   @override
   void initState() {
+    _selectedCountry = getCountryCode('NG');
     super.initState();
   }
 
@@ -67,48 +69,52 @@ class _HomeWidgetState extends State<HomeWidget> {
                       favorite: ['+39', 'FR']),
                 ),
               ),
-              FlatButton(onPressed: _showCountryPicker, child: _getButtonText())
+              _CurrencyWidget(
+                onSelected: (value) {
+                  setState(() => _selectedCountry = value);
+                },
+                countryCode: _selectedCountry,
+              ),
             ],
           ),
         ));
   }
+}
 
-  Widget _getButtonText() {
-    if (_selectedCountry == null) {
-      return Text('Pick Country');
-    } else {
-      return Flex(
-        direction: Axis.horizontal,
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          Flexible(
-            flex: 1,
-            fit: FlexFit.loose,
-            child: Padding(
-              padding: const EdgeInsets.only(right: 16.0),
-              child: Image.asset(
-                _selectedCountry.flagUri,
-                package: 'country_code_picker',
-                width: 32.0,
-              ),
-            ),
-          ),
-          Flexible(
-            fit: FlexFit.loose,
-            child: Text(
-              '${_selectedCountry.name} ${_selectedCountry.currency} ${_selectedCountry.dialCode}',
-            ),
-          ),
-        ],
-      );
-    }
-  }
+class _CurrencyWidget extends StatelessWidget {
+  final ValueChanged<CountryCode> onSelected;
+  final CountryCode countryCode;
+  final String initialSelection;
+  final List<String> favorite;
+  final bool showCountryOnly;
 
-  void _showCountryPicker() async {
-    var country =
-        await showDialog(context: context, builder: (_) => CountryCodePickerWidget());
-    setState(() {
-      this._selectedCountry = country;
-    });
+  _CurrencyWidget(
+      {@required this.onSelected,
+      @required this.countryCode,
+      this.showCountryOnly,
+      this.favorite,
+      this.initialSelection});
+
+  @override
+  Widget build(BuildContext context) {
+    return FlatButton(
+        onPressed: () async {
+          var countryCode = await Navigator.of(context)
+              .push(MaterialPageRoute(builder: (_) => MyCountryCodePickerWidget()));
+          if (countryCode != null) {
+            onSelected(countryCode);
+          }
+        },
+        child: Row(
+          children: <Widget>[
+            Image.asset(
+              countryCode.flagUri,
+              package: 'country_code_picker',
+              width: 30,
+            ),
+            Text(countryCode.currency),
+            Icon(Icons.keyboard_arrow_down)
+          ],
+        ));
   }
 }
