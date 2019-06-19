@@ -39,11 +39,11 @@ abstract class BaseCountryCodePicker extends StatefulWidget {
   });
 
   List<CountryCode> getCountryCodes() {
-    List<Map> jsonList = codes;
+    List<Map> jsonList = countryCodes;
 
     return jsonList.map((s) {
       var code = s['code'];
-      var currency = currencies[code];
+      var currency = countryCurrencies[code];
       return new CountryCode(
         name: s['name'],
         code: code,

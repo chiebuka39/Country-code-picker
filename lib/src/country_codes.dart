@@ -1,4 +1,4 @@
-List<Map> codes = [
+List<Map> countryCodes = [
   {"name": "افغانستان", "code": "AF", "dial_code": "+93"},
   {"name": "Åland", "code": "AX", "dial_code": "+358"},
   {"name": "Shqipëria", "code": "AL", "dial_code": "+355"},
@@ -262,7 +262,7 @@ List<Map> codes = [
   {"name": "Zimbabwe", "code": "ZW", "dial_code": "+263"}
 ];
 
-var currencies = {
+var countryCurrencies = {
   "BD": {"countryName": "Bangladesh", "currency": "BDT", "symbol": "Tk"},
   "BE": {"countryName": "Belgium", "currency": "EUR", "symbol": "€"},
   "BF": {"countryName": "Burkina Faso", "currency": "XOF", "symbol": "CFA"},
