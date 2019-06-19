@@ -38,8 +38,7 @@ class _SelectionDialogState extends State<SelectionDialog> {
 
   @override
   Widget build(BuildContext context) => Material(
-        color: Colors.white,
-        type: MaterialType.canvas,
+        type: MaterialType.transparency,
         child: Container(
           child: Column(
             children: <Widget>[
