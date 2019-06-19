@@ -83,16 +83,6 @@ abstract class BaseCountryCodePickerState extends State<BaseCountryCodePicker> {
             null)
         .toList();
     super.initState();
-
-    if (mounted) {
-      publishSelection(selectedItem);
-    }
-  }
-
-  void publishSelection(CountryCode e) {
-    if (widget.onChanged != null) {
-      widget.onChanged(e);
-    }
   }
 }
 
@@ -131,6 +121,15 @@ class CountryCodePicker extends BaseCountryCodePicker {
 
 class _CountryCodePickerState extends BaseCountryCodePickerState {
   _CountryCodePickerState(List<CountryCode> elements) : super(elements);
+
+
+  @override
+  void initState() {
+    super.initState();
+    if (mounted) {
+      publishSelection(selectedItem);
+    }
+  }
 
   @override
   Widget build(BuildContext context) => new FlatButton(
@@ -187,5 +186,11 @@ class _CountryCodePickerState extends BaseCountryCodePickerState {
         publishSelection(e);
       }
     });
+  }
+
+  void publishSelection(CountryCode e) {
+    if (widget.onChanged != null) {
+      widget.onChanged(e);
+    }
   }
 }

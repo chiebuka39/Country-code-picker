@@ -47,5 +47,6 @@ class _CountryCodePickerWidgetState extends BaseCountryCodePickerState {
         emptySearchBuilder: widget.emptySearchBuilder,
         searchDecoration: widget.searchDecoration,
         searchStyle: widget.searchStyle,
+        onChanged: widget.onChanged,
       );
 }

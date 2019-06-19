@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 /// selection widget used for selection of the country code
 class SelectionDialog extends StatefulWidget {
+  final ValueChanged<CountryCode> onChanged;
   final List<CountryCode> elements;
   final bool showCountryOnly;
   final InputDecoration searchDecoration;
@@ -18,6 +19,7 @@ class SelectionDialog extends StatefulWidget {
     this.favoriteElements,
     this.showCountryOnly,
     this.emptySearchBuilder,
+    this.onChanged,
     InputDecoration searchDecoration = const InputDecoration(),
     this.searchStyle,
   })  : assert(searchDecoration != null, 'searchDecoration must not be null!'),
@@ -137,6 +139,10 @@ class _SelectionDialogState extends State<SelectionDialog> {
   }
 
   void _selectItem(CountryCode e) {
-    Navigator.pop(context, e);
+    if (widget.onChanged == null) {
+      Navigator.pop(context, e);
+    } else {
+      widget.onChanged(e);
+    }
   }
 }
