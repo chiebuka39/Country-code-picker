@@ -26,7 +26,7 @@ List<Map> countryCodes = [
   {"name": "Bermuda", "code": "BM", "dial_code": "+1441"},
   {"name": "Bhutan", "code": "BT", "dial_code": "+975"},
   {"name": "Bolivia", "code": "BO", "dial_code": "+591"},
-  {"name": "Bosnia", "code": "BA", "dial_code": "+387"},
+  {"name": "Bosnia and Herzegovina", "code": "BA", "dial_code": "+387"},
   {"name": "Botswana", "code": "BW", "dial_code": "+267"},
   {"name": "Bouvet Island", "code": "BV", "dial_code": "+47"},
   {"name": "Brasil", "code": "BR", "dial_code": "+55"},
