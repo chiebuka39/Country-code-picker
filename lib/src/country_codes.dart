@@ -1,7 +1,7 @@
 List<Map> countryCodes = [
   {"name": "Afghanistan", "code": "AF", "dial_code": "+93"},
   {"name": "Aland Islands", "code": "AX", "dial_code": "+358"},
-  {"name": "Shqipëria", "code": "AL", "dial_code": "+355"},
+  {"name": "Albania", "code": "AL", "dial_code": "+355"},
   {"name": "Algeria", "code": "DZ", "dial_code": "+213"},
   {"name": "American Samoa", "code": "AS", "dial_code": "+1684"},
   {"name": "Andorra", "code": "AD", "dial_code": "+376"},
