@@ -29,7 +29,7 @@ List<Map> countryCodes = [
   {"name": "Bosnia and Herzegovina", "code": "BA", "dial_code": "+387"},
   {"name": "Botswana", "code": "BW", "dial_code": "+267"},
   {"name": "Bouvet Island", "code": "BV", "dial_code": "+47"},
-  {"name": "Brasil", "code": "BR", "dial_code": "+55"},
+  {"name": "Brazil", "code": "BR", "dial_code": "+55"},
   {"name": "British Indian Ocean Territory", "code": "IO", "dial_code": "+246"},
   {"name": "Brunei", "code": "BN", "dial_code": "+673"},
   {"name": "Bulgaria", "code": "BG", "dial_code": "+359"},
