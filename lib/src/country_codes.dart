@@ -14,7 +14,7 @@ List<Map> countryCodes = [
   {"name": "Aruba", "code": "AW", "dial_code": "+297"},
   {"name": "Australia", "code": "AU", "dial_code": "+61"},
   {"name": "Austria", "code": "AT", "dial_code": "+43"},
-  {"name": "Azərbaycan", "code": "AZ", "dial_code": "+994"},
+  {"name": "Azerbaijan", "code": "AZ", "dial_code": "+994"},
   {"name": "Bahamas", "code": "BS", "dial_code": "+1242"},
   {"name": "Bahrain", "code": "BH", "dial_code": "+973"},
   {"name": "Bangladesh", "code": "BD", "dial_code": "+880"},
