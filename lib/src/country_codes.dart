@@ -264,7 +264,7 @@ List<Map> countryCodes = [
 
 var countryCurrencies = {
   "BD": {"countryName": "Bangladesh", "currency": "BDT", "symbol": "Tk"},
-  "BE": {"countryName": "Belgium", "currency": "EUR", "symbol": "€"},
+  "BE": {"countryName": "Belgium", "currency": "BEL", "symbol": "€"},
   "BF": {"countryName": "Burkina Faso", "currency": "XOF", "symbol": "CFA"},
   "BG": {"countryName": "Bulgaria", "currency": "BGN", "symbol": "BGN"},
   "BA": {"countryName": "Bosnia and Herzegovina", "currency": "BAM", "symbol": "KM"},
