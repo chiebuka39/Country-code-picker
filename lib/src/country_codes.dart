@@ -531,7 +531,7 @@ var countryCurrencies = {
   "AS": {"countryName": "American Samoa", "currency": "USD", "symbol": "\$"},
   "AR": {"countryName": "Argentina", "currency": "ARS", "symbol": "AR\$"},
   "AU": {"countryName": "Australia", "currency": "AUD", "symbol": "AU\$"},
-  "AT": {"countryName": "Austria", "currency": "EUR", "symbol": "€"},
+  "AT": {"countryName": "Austria", "currency": "AUT", "symbol": "€"},
   "AW": {"countryName": "Aruba", "currency": "AWG", "symbol": "AWG"},
   "IN": {"countryName": "India", "currency": "INR", "symbol": "Rs"},
   "AX": {"countryName": "Aland Islands", "currency": "EUR", "symbol": "€"},
