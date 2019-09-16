@@ -42,6 +42,11 @@ class _SelectionDialogState extends State<SelectionDialog> {
         child: Container(
           child: Column(
             children: <Widget>[
+              TextField(
+                style: widget.searchStyle,
+                decoration: widget.searchDecoration,
+                onChanged: _filterElements,
+              ),
               Expanded(
                   child: SingleChildScrollView(
                 child: Column(
