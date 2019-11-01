@@ -451,7 +451,7 @@ var countryCurrencies = {
   "SY": {"countryName": "Syria", "currency": "SYP", "symbol": "SY£"},
   "SX": {"countryName": "Sint Maarten", "currency": "ANG", "symbol": "ANG"},
   "KG": {"countryName": "Kyrgyzstan", "currency": "KGS", "symbol": "KGS"},
-  "KE": {"countryName": "Kenya", "currency": "KES", "symbol": "Ksh"},
+  "KE": {"countryName": "Kenya", "currency": "KES", "symbol": "KSH"},
   "SS": {"countryName": "South Sudan", "currency": "SSP", "symbol": "SSP"},
   "SR": {"countryName": "Suriname", "currency": "SRD", "symbol": "SRD"},
   "KI": {"countryName": "Kiribati", "currency": "AUD", "symbol": "AU\$"},
