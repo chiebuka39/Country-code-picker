@@ -366,7 +366,7 @@ var countryCurrencies = {
   "VN": {"countryName": "Vietnam", "currency": "VND", "symbol": "₫"},
   "SB": {"countryName": "Solomon Islands", "currency": "SBD", "symbol": "SBD"},
   "ET": {"countryName": "Ethiopia", "currency": "ETB", "symbol": "Br"},
-  "SO": {"countryName": "Somalia", "currency": "SOS", "symbol": "Ssh"},
+  "SO": {"countryName": "Somalia", "currency": "USD", "symbol": "\$"},
   "ZW": {"countryName": "Zimbabwe", "currency": "ZWL", "symbol": "ZWL"},
   "SA": {"countryName": "Saudi Arabia", "currency": "SAR", "symbol": "SR"},
   "ES": {"countryName": "Spain", "currency": "EUR", "symbol": "€"},
